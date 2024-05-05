@@ -1,0 +1,407 @@
+[gd_scene load_steps=3 format=3 uid="uid://df3c5dkuv5ngd"]
+
+[ext_resource type="Script" path="res://interface/menu.gd" id="1_p4sno"]
+[ext_resource type="Texture2D" uid="uid://ckl70asby3gsf" path="res://option.jpg" id="2_ne2rr"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p4sno")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -664.0
+offset_top = -356.0
+offset_right = 664.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ne2rr")
+
+[node name="Menu" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -50.5
+offset_right = 51.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonStart" type="Button" parent="TextureRect/Menu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
+text = "Démarrer une nouvelle partie"
+
+[node name="ButtonOption" type="Button" parent="TextureRect/Menu"]
+layout_mode = 2
+text = "Options"
+
+[node name="ButtonQuit" type="Button" parent="TextureRect/Menu"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../ButtonStart")
+text = "Quitter"
+
+[node name="Option" type="Control" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/Option"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Video" type="Button" parent="TextureRect/Option/VBoxContainer2"]
+layout_mode = 2
+text = "Vidéo"
+
+[node name="Audio" type="Button" parent="TextureRect/Option/VBoxContainer2"]
+layout_mode = 2
+text = "Audio"
+
+[node name="Contrôle" type="Button" parent="TextureRect/Option/VBoxContainer2"]
+layout_mode = 2
+text = "Contrôle"
+
+[node name="BackFromOptions" type="Button" parent="TextureRect/Option"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 248.0
+offset_right = 35.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour"
+
+[node name="Video" type="Control" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -43.5
+offset_right = 57.5
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="TextureRect/Video/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Plein Écran" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Plein Écran"
+
+[node name="Fenêtré" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Fenêtré"
+
+[node name="VSync" type="Label" parent="TextureRect/Video/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "VSync
+"
+
+[node name="Checks" type="VBoxContainer" parent="TextureRect/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="Plein Écran" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
+layout_mode = 2
+text = "
+"
+alignment = 1
+
+[node name="Fenêtré" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
+layout_mode = 2
+alignment = 1
+
+[node name="VSync" type="CheckBox" parent="TextureRect/Video/HBoxContainer/Checks"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackFromVideo" type="Button" parent="TextureRect/Video"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 248.0
+offset_right = 35.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour"
+
+[node name="Audio" type="Control" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -38.5
+offset_right = 88.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="TextureRect/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Volume Principal" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Volume Principal"
+
+[node name="Musique" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Musique"
+
+[node name="Sound FX" type="Label" parent="TextureRect/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Sound FX"
+
+[node name="Slider" type="VBoxContainer" parent="TextureRect/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Volume Principal" type="HSlider" parent="TextureRect/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="Musique" type="HSlider" parent="TextureRect/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="Sound FX" type="HSlider" parent="TextureRect/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+max_value = 1.0
+step = 0.25
+value = 1.0
+
+[node name="BackFromAudio" type="Button" parent="TextureRect/Audio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 248.0
+offset_right = 35.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour"
+
+[node name="Contrôle" type="Control" parent="TextureRect"]
+visible = false
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Contrôle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -52.0
+offset_right = 35.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Contrôle/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Droite" type="Label" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Droite"
+
+[node name="Gauche" type="Label" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Gauche"
+
+[node name="Saut" type="Label" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Saut"
+
+[node name="Pause" type="Label" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Pause"
+
+[node name="VSeparator" type="VSeparator" parent="TextureRect/Contrôle/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/Contrôle/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Droite" type="Button" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+
+[node name="Gauche" type="Button" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+
+[node name="Saut" type="Button" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+
+[node name="Pause" type="Button" parent="TextureRect/Contrôle/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="BackFromContrôle" type="Button" parent="TextureRect/Contrôle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = 248.0
+offset_right = 35.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Retour"
+
+[connection signal="pressed" from="TextureRect/Menu/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/ButtonOption" to="." method="_on_button_option_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="TextureRect/Option/VBoxContainer2/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="TextureRect/Option/VBoxContainer2/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="TextureRect/Option/VBoxContainer2/Contrôle" to="." method="_on_contrôle_pressed"]
+[connection signal="pressed" from="TextureRect/Option/BackFromOptions" to="." method="_on_back_from_options_pressed"]
+[connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/Plein Écran" to="." method="_on_plein_écran_toggled"]
+[connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/Fenêtré" to="." method="_on_fenêtré_toggled"]
+[connection signal="toggled" from="TextureRect/Video/HBoxContainer/Checks/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="pressed" from="TextureRect/Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
+[connection signal="value_changed" from="TextureRect/Audio/HBoxContainer/Slider/Volume Principal" to="." method="_on_volume_principal_value_changed"]
+[connection signal="value_changed" from="TextureRect/Audio/HBoxContainer/Slider/Musique" to="." method="_on_musique_value_changed"]
+[connection signal="value_changed" from="TextureRect/Audio/HBoxContainer/Slider/Sound FX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="pressed" from="TextureRect/Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]
+[connection signal="pressed" from="TextureRect/Contrôle/HBoxContainer/VBoxContainer2/Droite" to="." method="_on_droite_pressed"]
+[connection signal="pressed" from="TextureRect/Contrôle/HBoxContainer/VBoxContainer2/Gauche" to="." method="_on_gauche_pressed"]
+[connection signal="pressed" from="TextureRect/Contrôle/HBoxContainer/VBoxContainer2/Saut" to="." method="_on_saut_pressed"]
+[connection signal="pressed" from="TextureRect/Contrôle/HBoxContainer/VBoxContainer2/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="TextureRect/Contrôle/BackFromContrôle" to="." method="_on_back_from_contrôle_pressed"]
